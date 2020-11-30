@@ -13,7 +13,12 @@
 
     <div class="form-group">
         <label for="type_id">Tipo:</label>
-        <input class="form-control" type="text" name="type_id"> 
+        <select name="type_id" id="type_id" class="form-control">
+            <?php foreach ($types as $type) {?>
+                <option value="<?= $type->id ?>"><?= $type->name?>
+           <?php }?>
+           </option>
+        </select>
     </div>
 
     <div class="form-group">

@@ -2,6 +2,7 @@
 namespace App\Controllers;
 
 use \App\Models\Product;
+use App\Models\ProductType;
 
 class ProductController  
 {
@@ -15,15 +16,18 @@ class ProductController
         
         include('../views/product/index.php');
     }
+    
 
     public function edit($arguments)
     {
         $id = $arguments['0'];
         $product = Product::find($id);
+        $types = ProductType::all();
         include('../views/product/edit.php');                
     }
     public function create()
     {
+        $types = ProductType::all();
         include('../views/product/create.php');        
     }
 

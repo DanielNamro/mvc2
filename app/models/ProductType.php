@@ -10,6 +10,23 @@ class ProductType
     {
         # code...
     }
+    public function products()
+    {
+        $db = ProductType::db();
+        $statement = $db->query('SELECT * FROM products WHERE type_id=' . $this->id);
+        $products = $statement->fetchAll(PDO::FETCH_CLASS, Product::class);
+
+        return $products;     
+    }
+    public function __get($atributoDesconocido)
+{
+    // return "atributo $atributoDesconocido desconocido";
+    if (method_exists($this, $atributoDesconocido)) {
+        $this->$atributoDesconocido = $this->$atributoDesconocido();
+        return $this->$atributoDesconocido;
+        // echo "<hr> atributo $x <hr>";
+    }
+}
 
     public static function all()
     {

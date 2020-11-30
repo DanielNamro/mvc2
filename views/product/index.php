@@ -20,7 +20,7 @@
             <?php foreach($products as $product) {?>
                 <tr>
                 <td><?= $product->name ?></td>
-                <td><?= $product->type_id ?></td>
+                <td><?= $product->type()->name ?></td>
                 <td><?= number_format($product->price, 2, ",", ".") ?></td>
 
                 <td><a class="btn btn-primary btn-sm" href="/product/show/<?= $product->id ?>">  Ver </a></td>

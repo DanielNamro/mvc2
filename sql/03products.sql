@@ -1,4 +1,4 @@
-USE `mvc18trabajo`;
+USE `mvc`;
 
 
 DROP TABLE IF EXISTS `products`;
@@ -14,7 +14,7 @@ CREATE TABLE `products` (
 INSERT INTO `products` VALUES
 (1, 'ambar', 1, 0.8),
 (2, 'Coca Cola', 2, 1),
-(3, 'Fanta Limón', 2, 1),
+(3, 'Fanta Limï¿½n', 2, 1),
 (4, 'Fanta Naranja', 2, 1),
 (5, 'Gin Tonic', 5, 3)
 ;

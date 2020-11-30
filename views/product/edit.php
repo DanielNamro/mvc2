@@ -12,9 +12,13 @@
     </div>
 
     <div class="form-group">
-        <label for="type_id">Tipo:</label>
-        <input class="form-control" type="text" name="type_id" value="<?= $product->type_id ?>"> 
-    </div>
+        <label for="type_id">Tipo:<?= $product->type()->name ?></label>
+        <select name="type_id" id="type_id" class="form-control">
+            <?php foreach ($types as $type) {?>
+                <option value="<?= $type->id ?>" <?= $product->type_id == $type->id ? 'selected' : '' ?>><?= $type->name?>
+           <?php }?>
+           </option>
+        </select>    </div>
 
     <div class="form-group">
         <label for="price">Precio:</label>

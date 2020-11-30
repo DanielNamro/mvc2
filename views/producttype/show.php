@@ -1,4 +1,8 @@
-<?php include('../views/parts/head.php'); ?>
+<?php
+
+use App\Models\Product;
+
+include('../views/parts/head.php'); ?>
 <?php include('../views/parts/header.php'); ?>
 <!-- Begin page content -->
 <main role="main" class="container">    
@@ -8,10 +12,14 @@
             <?= $productType->name ?>
         </div>
         <ul class="list-group list-group-flush">
-          
-            <li class="list-group-item">Cervez 1</li>
-            <li class="list-group-item">Cervez 2</li>
-            <li class="list-group-item">Cervez ...</li>
+        <?php
+        foreach($productType->products as $product){
+            ?>
+            <li class="list-group-item"><?= $product->name ?></li> 
+            <?php
+        }
+        ?>
+
         </ul>
   </div>    
 </main>
